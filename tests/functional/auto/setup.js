@@ -370,8 +370,8 @@ describe(`testing hls.js playback in the browser on "${browserDescription}"`, fu
 
   for (let name in streams) {
     stream = streams[name];
-    let url = stream.url;
-    let config = stream.config || {};
+    const url = stream.url;
+    const config = stream.config || { enableWorker: false };
     if (
       !stream.blacklist_ua ||
       stream.blacklist_ua.indexOf(browserConfig.name) === -1
